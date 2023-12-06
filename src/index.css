@@ -9,3 +9,12 @@
 ::-webkit-scrollbar{
     display: none;
 }
+
+
+.itemsgrid{
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+    grid-auto-rows: 200px;
+    gap: 2rem;
+}
