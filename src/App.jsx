@@ -22,7 +22,7 @@ function App() {
 
   return (
     <Router>
-      <div className='App bg-gray-400'>
+      <div className='App bg-black h-full'>
         <NavBar num={num}/>
 
         <Routes>
