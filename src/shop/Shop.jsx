@@ -24,7 +24,8 @@ export default function Shop({ handleclick }){
                     for (let i = 0; i < 5; i++) {
                       let obj = {
                         name: items[i].title,
-                        price: items[i].price
+                        price: items[i].price,
+                        image: items[i].image
                       };
             
                       updatedProducts.push(obj);

@@ -1,6 +1,6 @@
-export default function Item({name , price}){
+export default function Item({name , price, image}){
 
-
+console.log(image)
 
 
 
@@ -10,6 +10,9 @@ export default function Item({name , price}){
                 {name}
             </div>
 
+
+            <img src={image} height={100} width={100} className="rounded-lg"/>
+
             <div>
                 {price}
             </div>
@@ -17,6 +20,7 @@ export default function Item({name , price}){
             <div className="flex gap-4">
                 <input className = "rounded-lg p-2" type="text" defaultValue={1} />
                 <button className="bg-black text-white p-2 rounded-md">Add to cart</button>
+                
 
             </div>
         </div>
