@@ -7,6 +7,10 @@ export default function Shop({ handleclick }){
 
     let [products,setprod] = useState([]);
 
+    //runs on mount
+    //gets details from api
+    //updates state with the products details
+
     useEffect(
         ()=>{
             async function getprod(){
@@ -39,17 +43,18 @@ export default function Shop({ handleclick }){
         },[]
     )
 
-
+        let grid = [];
+        for(let i = 0;i<5;i++){
+            grid.push(<Item name={products[i].name} price={products[i].price}/>)
+        }
 
     return(
         <div className=" bg-black h-full text-gray-400 flex flex-col">
             <h1 className="text-4xl text-center font-bold mt-3 ">Shop</h1>
 
             <div className="itemsgrid mt-6">
-                <Item name={'Computer'} price={'R$10000'}/>
-                <Item name={'Computer'} price={'R$10000'}/>
-                <Item name={'Computer'} price={'R$10000'}/>
-                <Item name={'Computer'} price={'R$10000'}/>
+                
+                {grid}
                 
             </div>
 
