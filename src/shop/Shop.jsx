@@ -17,10 +17,9 @@ export default function Shop({ handleclick }){
 
                 let res = await fetch('https://fakestoreapi.com/products?limit=5');
                 let items = await res.json();
-               
+                
 
-                setprod(prevProducts => {
-                    let updatedProducts = [];
+                let updatedProducts = [];
             
                     for (let i = 0; i < 5; i++) {
                       let obj = {
@@ -30,9 +29,8 @@ export default function Shop({ handleclick }){
             
                       updatedProducts.push(obj);
                     }
-            
-                    return updatedProducts;
-                  });
+
+                setprod(updatedProducts);
     
 
 
@@ -43,10 +41,17 @@ export default function Shop({ handleclick }){
         },[]
     )
 
-        let grid = [];
-        for(let i = 0;i<5;i++){
-            grid.push(<Item name={products[i].name} price={products[i].price}/>)
+
+    
+    
+    let grid=[];
+    for(let i =0;i<5;i++){
+        if(products[i]){
+        grid.push(<Item name={products[i].name} price={products[i].price} image={products[i].image} key={i}/>)
         }
+    }
+       
+
 
     return(
         <div className=" bg-black h-full text-gray-400 flex flex-col">
