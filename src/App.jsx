@@ -26,6 +26,16 @@ function App() {
 
   }
 
+  //for future cluleless me
+
+  //first whenever the value in the input box of an item changes,
+  //that values is stored with the item name using the changeProdnums function, which changes state in Shop componnent
+  //now whenever the add to cart button is clicked
+  //first, the name and price of the item are sent to shop using the shopChangeCart function
+  //that function now gets the item nos of the product using the prodnums state object(which is stored when input is altered)
+  //now shopChangeCart calls changeCart functin which changes the cart state in App.jsx top level component
+
+  //essentialy, state cascades with the help of middleman functions adding the required data
   
 
 //basically the app is covered with router tag
