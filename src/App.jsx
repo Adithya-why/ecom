@@ -8,11 +8,25 @@ import Shop from './shop/Shop'
 
 function App() {
   
-  let [num,setnum] = useState(0);
+  let [cart,updateCart] = useState([]);
 
-  let handleclick = ()=>{
-    setnum(num+1);
+  function changeCart(name,val,price){
+
+    let temp = cart;
+    let obj = {
+      name,
+      val,
+      price
+    }
+
+    temp.push(obj);
+    console.log(temp);
+    updateCart(temp);
+    
+
   }
+
+  
 
 //basically the app is covered with router tag
 //routes contain a collection of single route
@@ -20,16 +34,18 @@ function App() {
 //stuff outside routes will show up at all time
 //link used to load the page on click
 
+
+
   return (
     <Router>
       <div className='App bg-black h-full'>
-        <NavBar num={num}/>
+        <NavBar num={cart.length}/>
 
         <Routes>
           
         <Route path='/' element={<Home/>}></Route>
 
-        <Route path='/shop' element={<Shop handleclick={handleclick}/>}></Route>
+        <Route path='/shop' element={<Shop changeCart={changeCart}/>}></Route>
 
         </Routes>
       </div>

@@ -3,7 +3,7 @@ import Item from "./Item"
 import { useState } from "react";
 
 
-export default function Shop({ handleclick }){
+export default function Shop({ changeCart }){
 
     let [products,setprod] = useState([]);
 
@@ -43,12 +43,38 @@ export default function Shop({ handleclick }){
     )
 
 
+    //basically tracks the number of items as entered
+    //runs on change of input
+
+
+        let [prodnums,updateProdnums] = useState({});
+
+        function changeProdnums(e,name){
+            let val = e.target.value;
+            updateProdnums({...prodnums,[name]:val});
+
+        }
+    
+
+    //function to add items to cart
+    //calls changeCart
+
+    function shopChangeCart(name,price){
+        let itemno = prodnums[name];
+        changeCart(name,itemno,price);
+
+
+
+    }
+
     
     
     let grid=[];
     for(let i =0;i<5;i++){
         if(products[i]){
-        grid.push(<Item name={products[i].name} price={products[i].price} image={products[i].image} key={i}/>)
+        grid.push(<Item name={products[i].name} price={products[i].price} image={products[i].image} key={i} changeProdnums={changeProdnums} 
+        shopChangeCart={shopChangeCart}
+        />)
         }
     }
        
