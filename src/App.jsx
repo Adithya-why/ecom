@@ -10,6 +10,8 @@ function App() {
   
   let [cart,updateCart] = useState([]);
 
+  
+
   function changeCart(name,val,price){
 
     let temp = cart;
@@ -21,10 +23,17 @@ function App() {
 
     temp.push(obj);
     console.log(temp);
+    updateCartno(temp.length);
     updateCart(temp);
     
 
   }
+
+
+  //used to keep track of no. of items in cart
+  //updates together with cart
+
+  let [cartno,updateCartno] = useState(0);
 
   //for future cluleless me
 
@@ -49,7 +58,7 @@ function App() {
   return (
     <Router>
       <div className='App bg-black h-full'>
-        <NavBar num={cart.length}/>
+        <NavBar num={cartno}/>
 
         <Routes>
           
