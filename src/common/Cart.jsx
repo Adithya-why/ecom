@@ -1,4 +1,4 @@
-export default function Cart({ cart }){
+export default function Cart({ cart, clr }){
    //basically create a card for every element in cart
    //also calculates total
     let products = [];
@@ -38,7 +38,7 @@ export default function Cart({ cart }){
             </div>
 
             <div className=" flex items-center justify-center">
-                <button className=" bg-orange-500 p-4 rounded-md">Checkout and Pay</button>
+                <button className=" bg-orange-500 p-4 rounded-md" onClick={clr}>Checkout and Pay</button>
             </div>
 
             

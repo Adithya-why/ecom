@@ -15,6 +15,7 @@ function App() {
 
   function changeCart(name,val,price){
     //if item already there
+    //then simpley replace existing object in cart with new val
     let alreadyThere = cart.find((item)=> item.name===name)
      if(alreadyThere){
         let index;
@@ -57,6 +58,12 @@ function App() {
   }
 
 
+  function clearCart(){
+    updateCart([]);
+    updateCartno(0)
+  }
+
+
   //used to keep track of no. of items in cart
   //updates together with cart
 
@@ -93,7 +100,7 @@ function App() {
 
         <Route path='/shop' element={<Shop changeCart={changeCart}/>}></Route>
 
-        <Route path='/cart' element={<Cart cart={cart}/>}></Route>
+        <Route path='/cart' element={<Cart cart={cart} clr={clearCart}/>}></Route>
 
         </Routes>
       </div>
