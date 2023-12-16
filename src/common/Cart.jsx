@@ -8,9 +8,20 @@ export default function Cart({ cart }){
    
 
     return(
-        <div className="text-white flex items-center justify-center flex-col gap-6">
-            {products}
+        <div className="text-white">
 
+            <div className="flex items-center justify-center mb-10 mt-5">
+                <div className=" bg-slate-700 w-2/4 h-24 cartitem ">
+                    <div>Name</div>
+                    <div>Quantity</div>
+                    <div>Price</div>
+                
+                </div>
+            </div>
+
+            <div className="text-white flex items-center justify-center flex-col gap-6">
+                {products}
+            </div>
         </div>
     )
 }
@@ -23,7 +34,7 @@ function CartItem(item){
         <div className=" bg-slate-700 w-2/4 h-24 cartitem ">
             <div>{item.item.name}</div>
             <div>{item.item.val}</div>
-            <div>{item.item.price}</div>
+            <div>{item.item.price*item.item.val}</div>
 
             
         </div>
