@@ -18,7 +18,7 @@ export default function NavBar({ num }){
             </div>
 
             <div>
-                <p>Cart [{num}]</p>
+                <p><Link to={'/cart'}>Cart [{num}]</Link></p>
             </div>
             
         </div>
