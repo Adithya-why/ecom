@@ -51,6 +51,7 @@ export default function Shop({ changeCart }){
 
         function changeProdnums(e,name){
             let val = e.target.value;
+            
             updateProdnums({...prodnums,[name]:val});
 
         }
@@ -61,6 +62,12 @@ export default function Shop({ changeCart }){
 
     function shopChangeCart(name,price){
         let itemno = prodnums[name];
+
+        //i dont know why this fixes the error
+        //where val is undefined if it is one
+        if(itemno==undefined){
+            itemno=1;
+        }
         changeCart(name,itemno,price);
 
 

@@ -1,6 +1,6 @@
 export default function Item({name , price, image, changeProdnums, shopChangeCart}){
 
-console.log(image)
+// console.log(image)
 
 
 
