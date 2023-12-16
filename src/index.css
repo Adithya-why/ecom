@@ -18,3 +18,11 @@
     grid-auto-rows: 400px;
     gap: 2rem;
 }
+
+
+.cartitem{
+    display: grid;
+    grid-template-columns: 5fr 2fr 2fr;
+    align-items: center;
+    justify-items: center;
+}
