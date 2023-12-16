@@ -18,7 +18,7 @@ export default function NavBar({ num }){
             </div>
 
             <div>
-                <p><Link to={'/cart'}>Cart [{num}]</Link></p>
+                <p><Link className=" hover:text-xl hover:bg-slate-800 hover:p-5 rounded-md" to={'/cart'}>Cart [{num}]</Link></p>
             </div>
             
         </div>
