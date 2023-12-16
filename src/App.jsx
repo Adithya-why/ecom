@@ -14,6 +14,32 @@ function App() {
   
 
   function changeCart(name,val,price){
+    //if item already there
+    let alreadyThere = cart.find((item)=> item.name===name)
+     if(alreadyThere){
+        let index;
+        for(let i=0;i<cart.length;i++){
+          if(cart[i].name==name){
+            index = i;
+            console.log('isnideeee alraedy')
+            break;
+          }
+        }
+        let temp = cart;
+        let obj = {
+          name,
+          val:val+cart[index].val,
+          price
+        }
+        temp[index]=obj;
+        console.log(temp)
+        updateCart(temp);
+        return;
+
+
+
+     }
+
 
     let temp = cart;
     let obj = {
